@@ -43,15 +43,26 @@ namespace lists
               {"EarthsLastHope", "Mars"}
             });
 
+            Dictionary<string, string> testDictionary = new Dictionary<string, string>();
+            testDictionary["Awesome"] = "Seriously";
+
             foreach (string planet in planetList)
             {
+
+              // Commented code will not run because my spaceShip[planet] is not the correct value, my spaceShip key is the probe value
+              // List<string> visitedProbes = new List<string>();
               foreach (Dictionary<string, string> spaceShipDict in myDictionaries)
               {
+                // if (spaceShipDict.ContainsKey(planet))
+                // {
+                //   visitedProbes.Add(spaceShipDict[planet]);
+                // }
                 foreach (KeyValuePair<string, string> spaceShip in spaceShipDict)
                 {
                     if (planet == spaceShip.Value)
                     {
                         Console.WriteLine($"Spaceship {spaceShip.Key} visited the planet {planet}");
+                        // Console.WriteLing($"{planet}: {String.Join(",", visitedProbes)}");
                     }
                 }
               }
